@@ -59,7 +59,7 @@ public class King extends Piece {
             squares.add(new Square(currentFile, currentRank));
         }
 
-        return (Square[]) squares.toArray();
+        return squares.toArray(new Square[squares.size()]);
 
     }
 }

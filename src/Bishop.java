@@ -67,7 +67,7 @@ public class Bishop extends Piece {
             currentRank = (char) (currentRank + 1);
         }
 
-        return (Square[]) squares.toArray();
+        return squares.toArray(new Square[squares.size()]);
 
     }
 }

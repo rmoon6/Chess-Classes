@@ -63,7 +63,7 @@ public class Rook extends Piece {
             currentFile = (char) (currentFile + 1);
         }
 
-        return (Square[]) squares.toArray();
+        return squares.toArray(new Square[squares.size()]);
 
     }
 }
