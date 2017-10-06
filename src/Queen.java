@@ -31,7 +31,7 @@ public class Queen extends Piece {
         char currentFile;
         char currentRank;
 
-        //UP
+        //DOWN
         currentFile = startFile;
         currentRank = (char) (startRank - 1);
         while (Square.isInBounds(currentFile, currentRank)) {
@@ -39,7 +39,7 @@ public class Queen extends Piece {
             currentRank = (char) (currentRank - 1);
         }
 
-        //DOWN
+        //UP
         currentFile = startFile;
         currentRank = (char) (startRank + 1);
         while (Square.isInBounds(currentFile, currentRank)) {
@@ -63,7 +63,7 @@ public class Queen extends Piece {
             currentFile = (char) (currentFile + 1);
         }
 
-        //SOUTHEAST
+        //NORTHEAST
         currentFile = (char) (startFile + 1);
         currentRank = (char) (startRank + 1);
         while (Square.isInBounds(currentFile, currentRank)) {
@@ -72,7 +72,7 @@ public class Queen extends Piece {
             currentRank = (char) (currentRank + 1);
         }
 
-        //NORTHWEST
+        //SOUTHWEST
         currentFile = (char) (startFile - 1);
         currentRank = (char) (startRank - 1);
         while (Square.isInBounds(currentFile, currentRank)) {
@@ -81,7 +81,7 @@ public class Queen extends Piece {
             currentRank = (char) (currentRank - 1);
         }
 
-        //NORTHEAST
+        //SOUTHEAST
         currentFile = (char) (startFile + 1);
         currentRank = (char) (startRank - 1);
         while (Square.isInBounds(currentFile, currentRank)) {
@@ -90,7 +90,7 @@ public class Queen extends Piece {
             currentRank = (char) (currentRank - 1);
         }
 
-        //SOUTHWEST
+        //NORTHWEST
         currentFile = (char) (startFile - 1);
         currentRank = (char) (startRank + 1);
         while (Square.isInBounds(currentFile, currentRank)) {

@@ -31,7 +31,7 @@ public class Rook extends Piece {
         char currentFile;
         char currentRank;
 
-        //UP
+        //DOWN
         currentFile = startFile;
         currentRank = (char) (startRank - 1);
         while (Square.isInBounds(currentFile, currentRank)) {
@@ -39,7 +39,7 @@ public class Rook extends Piece {
             currentRank = (char) (currentRank - 1);
         }
 
-        //DOWN
+        //UP
         currentFile = startFile;
         currentRank = (char) (startRank + 1);
         while (Square.isInBounds(currentFile, currentRank)) {

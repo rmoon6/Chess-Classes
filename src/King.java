@@ -31,14 +31,14 @@ public class King extends Piece {
         char currentFile;
         char currentRank;
 
-        //UP
+        //DOWN
         currentFile = startFile;
         currentRank = (char) (startRank - 1);
         if (Square.isInBounds(currentFile, currentRank)) {
             squares.add(new Square(currentFile, currentRank));
         }
 
-        //DOWN
+        //UP
         currentFile = startFile;
         currentRank = (char) (startRank + 1);
         if (Square.isInBounds(currentFile, currentRank)) {

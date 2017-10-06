@@ -31,7 +31,7 @@ public class Bishop extends Piece {
         char currentFile;
         char currentRank;
 
-        //SOUTHEAST
+        //NORTHEAST
         currentFile = (char) (startFile + 1);
         currentRank = (char) (startRank + 1);
         while (Square.isInBounds(currentFile, currentRank)) {
@@ -40,7 +40,7 @@ public class Bishop extends Piece {
             currentRank = (char) (currentRank + 1);
         }
 
-        //NORTHWEST
+        //SOUTHWEST
         currentFile = (char) (startFile - 1);
         currentRank = (char) (startRank - 1);
         while (Square.isInBounds(currentFile, currentRank)) {
@@ -49,7 +49,7 @@ public class Bishop extends Piece {
             currentRank = (char) (currentRank - 1);
         }
 
-        //NORTHEAST
+        //SOUTHEAST
         currentFile = (char) (startFile + 1);
         currentRank = (char) (startRank - 1);
         while (Square.isInBounds(currentFile, currentRank)) {
@@ -58,7 +58,7 @@ public class Bishop extends Piece {
             currentRank = (char) (currentRank - 1);
         }
 
-        //SOUTHWEST
+        //NORTHWEST
         currentFile = (char) (startFile - 1);
         currentRank = (char) (startRank + 1);
         while (Square.isInBounds(currentFile, currentRank)) {
