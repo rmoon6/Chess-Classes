@@ -59,6 +59,34 @@ public class King extends Piece {
             squares.add(new Square(currentFile, currentRank));
         }
 
+        //NORTHEAST
+        currentFile = (char) (startFile + 1);
+        currentRank = (char) (startRank + 1);
+        if (Square.isInBounds(currentFile, currentRank)) {
+            squares.add(new Square(currentFile, currentRank));
+        }
+
+        //SOUTHWEST
+        currentFile = (char) (startFile - 1);
+        currentRank = (char) (startRank - 1);
+        if (Square.isInBounds(currentFile, currentRank)) {
+            squares.add(new Square(currentFile, currentRank));
+        }
+
+        //SOUTHEAST
+        currentFile = (char) (startFile + 1);
+        currentRank = (char) (startRank - 1);
+        if (Square.isInBounds(currentFile, currentRank)) {
+            squares.add(new Square(currentFile, currentRank));
+        }
+
+        //NORTHWEST
+        currentFile = (char) (startFile - 1);
+        currentRank = (char) (startRank + 1);
+        if (Square.isInBounds(currentFile, currentRank)) {
+            squares.add(new Square(currentFile, currentRank));
+        }
+
         return squares.toArray(new Square[squares.size()]);
 
     }
