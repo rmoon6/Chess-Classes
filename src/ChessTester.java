@@ -73,6 +73,24 @@ public class ChessTester {
         System.out.println("FEN name: " + k.fenName());
         System.out.println();
 
+        try {
+            new Square("a1");
+            System.out.println("worked");
+        } catch (InvalidSquareException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            new Square("a9");
+            System.out.println("worked");
+        } catch (InvalidSquareException e) {
+            System.out.println(e.getMessage());
+        }
+
+        Square s = new Square("f7");
+        Square s2 = new Square('e', '4');
+        System.out.println(s);
+        System.out.println(s2);
     }
 
     public static void printSquareArray(Square[] squares) {

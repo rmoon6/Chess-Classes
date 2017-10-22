@@ -3,14 +3,28 @@ public class Square {
     char file;
     char rank;
 
-    public Square(char file, char rank) {
+    public Square(char file, char rank) throws InvalidSquareException {
+
+        if (!isInBounds(file, rank)) {
+            throw new InvalidSquareException(file, rank);
+        }
+
         this.file = file;
         this.rank = rank;
     }
 
-    public Square(String name) {
-        this.file = name.charAt(0);
-        this.rank = name.charAt(1);
+    public Square(String name) throws InvalidSquareException {
+
+        this(name.charAt(0), name.charAt(1));
+
+    }
+
+    public char getFile() {
+        return file;
+    }
+
+    public char getRank() {
+        return rank;
     }
 
     @Override
