@@ -1,13 +1,15 @@
+/**
+ * THE STUPID HOMEWORK IS TALKING ABOUT INVALID SQUARES BUT THIS CLASS IS
+ * ALREADY DESIGNED TO NOT ACCEPT SQUARES IF THEY ARE INVALID
+ *
+ * I GUESS I SHOULD MODIFY THE
+ */
 public class Square {
 
     char file;
     char rank;
 
     public Square(char file, char rank) throws InvalidSquareException {
-
-        if (!isInBounds(file, rank)) {
-            throw new InvalidSquareException(file, rank);
-        }
 
         this.file = file;
         this.rank = rank;
@@ -52,6 +54,10 @@ public class Square {
 
         return fileCheck && rankCheck;
 
+    }
+
+    public static boolean isInBounds(Square square) {
+        return isInBounds(square.file, square.rank);
     }
 
 }

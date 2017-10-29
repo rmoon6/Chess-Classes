@@ -12,6 +12,6 @@ public abstract class Piece {
 
     public abstract String algebraicName();
     public abstract String fenName();
-    public abstract Square[] movesFrom(Square square);  //empty board => makes things easy; no castling or taking
+    public abstract Square[] movesFrom(Square square);
 
 }
