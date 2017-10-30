@@ -1,3 +1,3 @@
 # Chess-Classes
 
-main method => ChessTester.java
+main method => SquareSetTester.java
