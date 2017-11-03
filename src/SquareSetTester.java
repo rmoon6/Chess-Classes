@@ -6,8 +6,6 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * This is now used for testing the Square Set
- * Thinking back, I probably should have just made another main function for this
  */
 public class SquareSetTester {
 
@@ -119,7 +117,7 @@ public class SquareSetTester {
 
         System.out.println();
 
-        /*TO ARRAY (10PTS)*/
+        /*TO ARRAY (THE MORE COMPLICATED ONE) (10PTS)*/
         System.out.println("This print should work because the output array will now come out as squares instead of objects:");
         printSquareArray(ss.toArray(new Square[ss.size()]));    //uses the printSquareArray method because this variant of toArray() outputs an array of squares
 
@@ -150,11 +148,11 @@ public class SquareSetTester {
         printSquareSet(ss); //will not include anything in the listThatThrowsAnException list
 
         /*REMOVE (10PTS)*/
-        ss.remove(new Square("a5"));
-        ss.remove(new Square("a1"));
-        System.out.println("Here is the set with the a squares removed:");
+        System.out.println("<remove> Should show true: " + ss.remove(new Square("a5")));
+        System.out.println("<remove> Should show true: " + ss.remove(new Square("a1")));
+        System.out.println("<remove> Should show false: " + ss.remove("h8"));
+        System.out.println("<remove> Here is the set with the a squares removed:");
         printSquareSet(ss);
-
 
     }
 

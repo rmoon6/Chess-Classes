@@ -1,21 +1,15 @@
-/**
- * THE STUPID HOMEWORK IS TALKING ABOUT INVALID SQUARES BUT THIS CLASS IS
- * ALREADY DESIGNED TO NOT ACCEPT SQUARES IF THEY ARE INVALID
- *
- * I GUESS I SHOULD MODIFY THE
- */
 public class Square {
 
     char file;
     char rank;
 
-    public Square(char file, char rank) throws InvalidSquareException {
+    public Square(char file, char rank) {
 
         this.file = file;
         this.rank = rank;
     }
 
-    public Square(String name) throws InvalidSquareException {
+    public Square(String name) {
 
         this(name.charAt(0), name.charAt(1));
 

@@ -80,6 +80,7 @@ public class ChessTester {
             System.out.println(e.getMessage());
         }
 
+        //this doesn't really work anymore since the square class now allows squares to be invalid
         try {
             new Square("a9");
             System.out.println("worked");
