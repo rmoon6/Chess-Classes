@@ -13,39 +13,47 @@ public class SquareSet implements Set<Square> {
         int currentIndex;
 
         SquareIterator() {
-            currentIndex = -1;
+            currentIndex = 0;
         }
 
         @Override
         public boolean hasNext() {
-            return (currentIndex + 1) <= (squares.length - 1);
+            return currentIndex < squares.length;
         }
 
         @Override
         public Square next() {
-            currentIndex++;
-            return squares[currentIndex];
+            return squares[currentIndex++];
         }
+
     }
 
     public SquareSet() {
         squares = new Square[0];
     }
 
+    public SquareSet(Collection<Square> squareCollection) {
+        squares = new Square[0];
+        this.addAll(squareCollection);
+    }
+
     @Override
-    public boolean add(Square newSquare) throws InvalidSquareException {
+    public boolean add(Square newSquare) throws InvalidSquareException, NullPointerException {
+
+        if (newSquare == null) {
+            throw new NullPointerException();
+        }
 
         if (!Square.isInBounds(newSquare)) {
             throw new InvalidSquareException(newSquare);
         }
 
+        if (this.contains(newSquare)) {
+            return false;
+        }
+
         Square[] newSquares = new Square[squares.length+1];
         for (int i = 0; i < squares.length; i++) {
-
-            if (squares[i].equals(newSquare)) {
-                return false;
-            }
-
             newSquares[i] = squares[i];
         }
         newSquares[newSquares.length-1] = newSquare;
@@ -92,30 +100,8 @@ public class SquareSet implements Set<Square> {
             return false;
         }
 
-        Iterator<Square> iteratorObj = ss.iterator();
-        Square currentSquare = null;
-        boolean found = false;
-        while (iteratorObj.hasNext()) {
+        return this.containsAll(ss);
 
-            currentSquare = iteratorObj.next();
-
-            Iterator<Square> iteratorThis = this.iterator();
-            while (iteratorThis.hasNext()) {
-                if (currentSquare.equals(iteratorThis.next())) {
-                    found = true;
-                    break;
-                }
-            }
-
-            if (!found) {
-                return false;
-            }
-
-            found = false;
-
-        }
-
-        return true;
     }
 
     @Override

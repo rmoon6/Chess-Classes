@@ -4,7 +4,6 @@ public class Square {
     char rank;
 
     public Square(char file, char rank) {
-
         this.file = file;
         this.rank = rank;
     }

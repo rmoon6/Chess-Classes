@@ -13,6 +13,21 @@ public class SquareSetTester {
 
         /*NO ARG CONSTRUCTOR (5PTS)*/
         SquareSet ss = new SquareSet();
+        System.out.println("<no-arg constructor> should contain nothing:");
+        printSquareSet(ss);
+        System.out.println();
+
+        /*ARGUMENT CONSTRUCTOR*/
+        ArrayList<Square> squareArrayList = new ArrayList<>();
+        squareArrayList.add(new Square("a1"));
+        squareArrayList.add(new Square("a1"));
+        squareArrayList.add(new Square("b2"));
+        squareArrayList.add(new Square("c3"));
+        squareArrayList.add(new Square("d4"));
+        SquareSet ssArgConstructor = new SquareSet(squareArrayList);
+        System.out.println("<arg constructor> should contain four values:");
+        printSquareSet(ssArgConstructor);
+        System.out.println();
 
         Square s1 = new Square("a1");   //valid
         Square s1Copy = new Square("a1"); //valid, but same as s1
