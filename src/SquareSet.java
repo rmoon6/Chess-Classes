@@ -96,11 +96,7 @@ public class SquareSet implements Set<Square> {
 
         SquareSet ss = (SquareSet) obj;
 
-        if (ss.size() != this.size()) {
-            return false;
-        }
-
-        return this.containsAll(ss);
+        return ss.hashCode() == this.hashCode();
 
     }
 
@@ -174,20 +170,10 @@ public class SquareSet implements Set<Square> {
         return true;
     }
 
-    //I don't know the optimal way to do this, so I'll just loop through the damn thing twice
     @Override
     public boolean remove(Object o) {
 
-        boolean hasMatch = false;
-
-        for (int i = 0; i < squares.length; i++) {
-            if (o.equals(squares[i])) {
-                hasMatch = true;
-                break;
-            }
-        }
-
-        if (!hasMatch) {
+        if (!this.contains(o)) {
             return false;
         }
 

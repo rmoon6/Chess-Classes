@@ -36,8 +36,12 @@ public class Square {
 
         Square otherSquare = (Square) obj;
 
-        return (otherSquare.file == this.file
-                && otherSquare.rank == this.rank);
+        return otherSquare.hashCode() == this.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        return (file << 8) | rank;
     }
 
     public static boolean isInBounds(char file, char rank) {
