@@ -14,4 +14,20 @@ public abstract class Piece {
     public abstract String fenName();
     public abstract Square[] movesFrom(Square square);
 
+    @Override
+    public boolean equals(Object obj) {
+
+        if (!(obj instanceof Piece)) {
+            return false;
+        }
+
+        Piece p = (Piece) obj;
+
+        return p.fenName().equals(this.fenName()) && this.getColor() == p.getColor();
+    }
+
+    @Override
+    public String toString() {
+        return this.fenName();
+    }
 }
