@@ -2,7 +2,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 
+/**
+ * PLEASE NOTE:
+ *      The moves that are used to test this code are NOT meant to simulate an actual chess game. Most of these test
+ *      moves are illegal in chess, but this does not matter for the purposes of the test itself.
+ */
 public class ChessGameTester {
     public static void main(String[] args) {
         List<Move> moves = generateMoves();
@@ -31,6 +37,19 @@ public class ChessGameTester {
         System.out.println("<getMovesWithPiece()> Should print m6:");
         printListOfMoves(chessGame.getMovesWithPiece(new Rook(Color.WHITE)));
 
+        System.out.println();
+
+        System.out.println("<filter()> should print m1:");
+        printListOfMoves(chessGame.filter(new IsWhitePieceAPawn()));
+
+    }
+
+    //predicate to check to see if the white piece is a pawn; used to test the filter() function
+    static class IsWhitePieceAPawn implements Predicate<Move> {
+        @Override
+        public boolean test(Move move) {
+            return move.getWhitePly().getPiece().equals(new Pawn(Color.WHITE));
+        }
     }
 
     public static void printListOfMoves(List<Move> moves) {

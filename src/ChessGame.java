@@ -14,6 +14,11 @@ public class ChessGame {
         return moves.get(n-1);
     }
 
+    //this actually just makes things more confusing IMO
+    public List<Move> filter(Predicate<Move> filter) {
+        return moves.stream().filter(filter).collect(Collectors.toList());
+    }
+
     //filter done with a lambda
     public List<Move> getMovesWithComments() {
         return moves
